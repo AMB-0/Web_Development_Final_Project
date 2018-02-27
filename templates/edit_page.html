@@ -1,0 +1,20 @@
+
+<!--=============================================
+ |              EDIT PAGE.HTML                  |
+ =============================================-->
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- EDIT PAGE -->
+	<form method="post">
+	    <h2>Insert the HTML code of the page</h2>
+	    <br>
+	    <textarea name="content" rows="25" cols="70">{{wikipage.htmlcode | safe}}</textarea>
+	    <br>
+	    <input name="send" type="submit" value="Send">
+	</form>
+
+{% endblock %}

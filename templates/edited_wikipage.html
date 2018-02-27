@@ -1,0 +1,15 @@
+
+<!--=============================================
+ |            	   WIKIPAGE.HTML                |
+ =============================================-->
+
+{% extends "base.html" %}
+
+{% block content %}
+		
+		<!-- If the wikipage exist, we render the HTML code of the wikipage -->
+		{%if wikipage %}
+			{{wikipage.htmlcode | safe}}
+		{% endif %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/static/main.css"/>
+		<title>
+			Signup page
+		</title>
+	</head>
+
+	<body>
+		<form method="post">
+			<br>
+			<div class="login-title">
+			<h1>Login</h1>
+			</div>
+			<br>
+			<label > Username
+			<input name="username" type="text" value="{{user}}">
+			<b style="color:red">{{user_error_msg}}</b>
+			<br>
+			<label> Password
+		    <input name="password" type="password">
+			<b style="color:red">{{pass_error_msg}}</b>
+			<br>
+			<input type="submit">
+		</form>
+	</body>
+
+</html>

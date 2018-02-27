@@ -1,0 +1,51 @@
+
+<!--=============================================
+ |                   BASE.HTML                  |
+ =============================================-->
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link type="text/css" rel="stylesheet" href="/static/main.css" />
+		<title>CS 253 Final Project</title>
+	</head>
+
+	<body>
+		<!-- HEADER OF THE WIKI PAGE -->
+
+		<!-- If user is log in, we show username in main page and the logout link. If username hasn't log in, we show the login link and the
+		signup link-->
+		{% if username %}
+			<div class="login-username" >Log as {{username}}</div>
+			<a class="login-logout" href="/wiki/logout">(logout)</a>
+		{% else %}
+		    <a class="login-login" href="/wiki/login">login</a>
+		    <a class="login-signup" href="/wiki/signup">signup</a>
+		{% endif %}
+
+		<!-- We show the edit link and the history link if applies (If wikipage already exist, we show the history link). The edit link includes version
+		parameters if applies -->
+		{% if wikipage %}
+			{% if show_edit %}
+				{% if history_flag %}
+		    		<a class="login-edit" href=/wiki/_edit{{wikipage.pathname}}?v={{wikipage.version}}>edit</a>
+		    	{% else %}
+		    		<a class="login-edit" href=/wiki/_edit{{wikipage.pathname}}>edit</a>
+		    	{% endif %}
+		    {% endif %}
+		    {% if show_history %}
+		    <a class="login-history" href=/wiki/_history{{wikipage.pathname}}>history</a>
+		    {% endif %}
+		{% endif %}
+
+		<!-- We include a horizontal line that separates the header from the body of the page -->
+		<div class="h_line"></div>
+
+		{% block content %}
+
+		{% endblock %}
+
+	</body>
+
+</html>

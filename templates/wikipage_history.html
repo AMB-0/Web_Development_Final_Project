@@ -1,0 +1,25 @@
+
+<!--=============================================
+ | 	    	   WIKIPAGE HISTORY.HTML            |
+ =============================================-->
+
+{% extends "base.html" %}
+
+{% block content %}
+	
+		{%if wikipage %}
+			<!-- We render the table with the wiki historical information -->
+			<table style="width:60%">
+				<td class="table-header"> Creation Date </td>
+				<td class="table-header"> HTML Code </td>
+				{% for entry in wikipage %}
+					<tr>
+						<td> {{entry.created.ctime()}} </td>
+						<td> {{entry.htmlcode}} </td>
+						<td><a href=/wiki{{entry.pathname}}?v={{entry.version}}>View</a></td>
+						<td><a href=/wiki/_edit{{entry.pathname}}?v={{entry.version}}>Edit</a></td>
+					</tr>
+				{% endfor %}
+		{% endif %}
+
+{% endblock %}

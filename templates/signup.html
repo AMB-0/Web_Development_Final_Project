@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/static/main.css"/>
+		<title>
+			Signup page
+		</title>
+	</head>
+
+	<body>
+		<form method="post">
+			<br>
+			<div class="signup-title">
+			<h1>Signup</h1>
+			</div>
+			<br>
+			<label > Username
+			<input name="username" type="text" value="{{user}}">
+			<b style="color:red">{{username_error}}</b>
+			<br>
+			<label> Password
+		    <input name="password" type="password">
+			<b style="color:red">{{password_error}}</b>
+			<br>
+			<label> Verify Password
+		    <input name="verify" type="password">
+			<b style="color:red">{{verify_error}}</b>
+			<br>
+			<label> E-Mail(optional)
+		    <input name="email" type="text">
+			<b style="color:red">{{email_error}}</b>
+			<br>
+			<input type="submit">
+		</form>
+	</body>
+
+</html>
